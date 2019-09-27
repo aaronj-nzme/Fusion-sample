@@ -3,9 +3,29 @@
 import React, { Component } from 'react'
 
 class MovieDetail extends Component {
+  constructor (props) {
+    super(props)
+    this.state = { isPlotShown: false }
+    // Let's bind the togglePlot function so that a new function doesn't get created with each render
+    this.togglePlot = this.togglePlot.bind(this)
+  }
+
+  togglePlot () {
+    this.setState(({ isPlotShown }) => ({ isPlotShown: !isPlotShown }))
+  }
+
   render () {
 
     const { globalContent, outputType } = this.props
+    const { isPlotShown } = this.state
+
+    const plotButton = (
+      <button onClick={this.togglePlot}>
+        {isPlotShown ? 'Hide Plot' : 'Show Plot'}
+      </button>
+    )
+
+    const Plot = 'Lorem ipsum'
 
     // Chcek if the output type is amp
     if (outputType === 'amp') {
@@ -19,7 +39,8 @@ class MovieDetail extends Component {
         <h1>Jurassic Park</h1>
         <p><strong>Director:</strong> Steven Spielberg</p>
         <p><strong>Actors:</strong> Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough</p>
-        <p><strong>Plot:</strong> Lorem ipsum</p>
+        {/* We're displaying the plot only if `isPlotShown` is truthy, and then rendering the `plotButton` */}
+        <p><strong>Plot:</strong> {isPlotShown && Plot} {plotButton}</p>
         <p><strong>Rated:</strong> PG-13</p>
         <p><strong>Writer:</strong> Michael Crichton (novel), Michael Crichton (screenplay), David Koepp (screenplay)</p>
         <p><strong>Year:</strong> 1993</p>
