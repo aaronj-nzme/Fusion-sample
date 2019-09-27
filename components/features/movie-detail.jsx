@@ -1,7 +1,16 @@
 /*  /components/features/movies/movie-detail.jsx  */
 
+// ==========================================
+// !!!!!!!!!!   Important  !!!!!!!!!!!!!!!!!
+// ==========================================
+// Please set up resolver first - https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/using-consumer-function.md#setting-up-a-resolver
+
+// importing the Consumer object from fusion:consumer at the top of the file
+import Consumer from 'fusion:consumer'
 import React, { Component } from 'react'
 
+// added the Consumer decorator so we can use this.props.globalContent
+@Consumer
 class MovieDetail extends Component {
   constructor (props) {
     super(props)
@@ -19,13 +28,14 @@ class MovieDetail extends Component {
     const { globalContent, outputType } = this.props
     const { isPlotShown } = this.state
 
+    {/* Here, we extract the data we want from `this.props.globalContent`, which we "short circuit" default to an empty object, just in case it doesn't exist */}
+    const { Actors, Director, Plot, Poster, Rated, Title, Writer, Year } = this.props.globalContent || {}
+
     const plotButton = (
       <button onClick={this.togglePlot}>
         {isPlotShown ? 'Hide Plot' : 'Show Plot'}
       </button>
     )
-
-    const Plot = 'Lorem ipsum'
 
     // Chcek if the output type is amp
     if (outputType === 'amp') {
@@ -34,17 +44,17 @@ class MovieDetail extends Component {
       )
     }
 
+    {/* Replace the static values with their dynamic equivalents, first checking if each necessary value exists */}
     return (
       <div className='movie-detail col-sm-12 col-md-8'>
-        <h1>Jurassic Park</h1>
-        <p><strong>Director:</strong> Steven Spielberg</p>
-        <p><strong>Actors:</strong> Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough</p>
-        {/* We're displaying the plot only if `isPlotShown` is truthy, and then rendering the `plotButton` */}
-        <p><strong>Plot:</strong> {isPlotShown && Plot} {plotButton}</p>
-        <p><strong>Rated:</strong> PG-13</p>
-        <p><strong>Writer:</strong> Michael Crichton (novel), Michael Crichton (screenplay), David Koepp (screenplay)</p>
-        <p><strong>Year:</strong> 1993</p>
-        <img src='https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg' alt={`Poster for Jurassic Park`} />
+        {Title && <h1>{Title}</h1>}
+        {Director && <p><strong>Director:</strong> {Director}</p>}
+        {Actors && <p><strong>Actors:</strong> {Actors}</p>}
+        {Plot && <p><strong>Plot:</strong> {isPlotShown && Plot} {plotButton}</p>}
+        {Rated && <p><strong>Rated:</strong> {Rated}</p>}
+        {Writer && <p><strong>Writer:</strong> {Writer}</p>}
+        {Year && <p><strong>Year:</strong> {Year}</p>}
+        {Poster && Title && <img src={Poster} alt={`Poster for ${Title}`} />}
       </div>
     )
   }
