@@ -21,7 +21,13 @@ class MovieDetail extends Component {
   }
 
   togglePlot () {
-    this.setState(({ isPlotShown }) => ({ isPlotShown: !isPlotShown }))
+    const { isPlotShown } = this.state
+    // Create a common const 'newPlotShown'
+    const newPlotShown = !isPlotShown
+    this.setState({ isPlotShown: newPlotShown })
+
+    // Dispatch an event called  'moviePlotToggled' whose value is the new state of the plot's visiblity
+    this.dispatchEvent('moviePlotToggled', newPlotShown)
   }
 
   render () {
@@ -36,7 +42,7 @@ class MovieDetail extends Component {
     const { moviePrefix = 'Movie', showExtendedInfo = false } = this.props.customFields
 
     const plotButton = (
-      <button onClick={this.togglePlot}>
+      <button onClick={this.togglePlot} className="btn btn-primary">
         {isPlotShown ? 'Hide Plot' : 'Show Plot'}
       </button>
     )
@@ -50,22 +56,25 @@ class MovieDetail extends Component {
 
     {/* Replace the static values with their dynamic equivalents, first checking if each necessary value exists */}
     return (
-      <div className='movie-detail col-sm-12 col-md-8'>
+      <div className='movie-detail col-sm-12 col-md-8 card'>
+        {Poster && Title && <img src={Poster} alt={`Poster for ${Title}`} className="card-img-top" />}
         {/* We use the `moviePrefix` value before the Title */}
         {/* Invoking the `editableField` method with `moviePrefix` as the custom field it is tied to */}
-        <h1><span {...this.props.editableField('moviePrefix')}>{moviePrefix}:</span> {Title}</h1>
-        {/* we can use our boolean value `showExtendedInfo` to determine if certain data gets displayed or not */}
-        {Director && <p><strong>Director:</strong> {Director}</p>}
-        {Actors && <p><strong>Actors:</strong> {Actors}</p>}
-        {Poster && Title && <img src={Poster} alt={`Poster for ${Title}`} />}
-        {Plot && <p><strong>Plot:</strong> {isPlotShown && Plot} {plotButton}</p>}
-        {showExtendedInfo &&
-          <Fragment>
-            {Rated && <p><strong>Rated:</strong> {Rated}</p>}
-            {Writer && <p><strong>Writer:</strong> {Writer}</p>}
-            {Year && <p><strong>Year:</strong> {Year}</p>}
-          </Fragment>
-        }
+        <div className="card-body">
+          <h2 className="card-title"><span {...this.props.editableField('moviePrefix')}>{moviePrefix}:</span> {Title}</h2>
+          {/* we can use our boolean value `showExtendedInfo` to determine if certain data gets displayed or not */}
+          {Director && <p className="card-text"><strong>Director:</strong> {Director}</p>}
+          {Actors && <p className="card-text"><strong>Actors:</strong> {Actors}</p>}
+          {Plot && <p className="card-text"><strong>Plot:</strong> {isPlotShown && Plot} {plotButton}</p>}
+          {showExtendedInfo &&
+            <div>
+              {Rated && <p className="card-text"><strong>Rated:</strong> {Rated}</p>}
+              {Writer && <p className="card-text"><strong>Writer:</strong> {Writer}</p>}
+              {Year && <p className="card-text"><strong>Year:</strong> {Year}</p>}
+            </div>
+          }
+        </div>
+        
       </div>
     )
   }

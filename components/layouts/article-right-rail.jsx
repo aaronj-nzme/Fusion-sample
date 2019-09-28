@@ -7,6 +7,7 @@ const ArticleRightRail = (props) => {
     <div className='row'>
       <header className='col-12 fixed-on-small'>
         {props.children[0]}
+        <p>Movie Details</p>
       </header>
       <section className='col-12'>
         <div className='row'>
@@ -20,7 +21,7 @@ const ArticleRightRail = (props) => {
       </section>
       <footer className='col-12'>
         {props.children[3]}
-        <p>Copyright &copy; 2018</p>
+        <p>Copyright &copy; 2019</p>
       </footer>
     </div>
   )

@@ -34,7 +34,7 @@ export default (props) => {
         <link rel='stylesheet' href={`${props.contextPath}/resources/css/main.css`} />
       </head>
       <body>
-        <h1>Welcome to Fusion!</h1>
+        <h1>Welcome to NZME!</h1>
         <div id='fusion-app' className='col-12'>
           {/* 
             React standard prop, but for our purposes it will include all the other components (layouts, chains, and features) 

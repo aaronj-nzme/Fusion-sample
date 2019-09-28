@@ -5,3 +5,26 @@
   height: 250px;
   width: 250px;
 } 
+
+.card {
+  padding-top: 20px;
+  width: 25rem;
+  background: #000;
+  color: #fff;
+}
+
+footer, header {
+  margin: 20px 0;
+  background: skyblue;
+  padding: 50px;
+}
+
+footer p, header p {
+  text-align: center;
+  color: #fff;
+}
+
+section {
+  border: 1px solid yellowgreen;
+  padding: 10px;
+}

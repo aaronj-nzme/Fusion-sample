@@ -8,14 +8,14 @@ export default [
       element: 'header'
     },
     {
-      id: 'main',
-      cssClass: 'col-xs-12 col-md-9',
-      element: 'article'
-    },
-    {
       id: 'sidebar',
       cssClass: 'col-xs-12 col-md-3',
       element: 'aside'
+    },
+    {
+      id: 'main',
+      cssClass: 'col-xs-12 col-md-9',
+      element: 'article'
     },
     {
       id: 'footer',
@@ -29,12 +29,12 @@ export default [
 {/* <header id="header" class="col-xs-12 fixed-on-small">
   // Header Features/Chains
 </header>
-<article id="main" class="col-xs-12 col-md-9">
-  // Main Features/Chains
-</article>
 <aside id="sidebar" class="col-xs-12 col-md-3">
   // Sidebar Features/Chains
 </aside>
+<article id="main" class="col-xs-12 col-md-9">
+  // Main Features/Chains
+</article>
 <footer id="footer" class="col-xs-12">
   // Footer Features/Chains
 </footer> */}

@@ -22,15 +22,24 @@ class MovieList extends Component {
       movies: {
         pages: []
       },
-      page: 0
+      page: 1,
+      showList: true
     }
-    this.fetch = this.fetch.bind(this)
-    this.fetch();
+    // this.fetch = this.fetch.bind(this)
+    // this.fetch();
   }
 
-  componentDidMount() {
-    // We moved our `this.fetch()` call to `componentDidMount` from `constructor`
-    this.fetch()
+  // Adding our eventListener inside `componentDidMount` ensures it only happens client-side
+  componentDidMount () {
+    // Define an event handler that sets the `showList` property to the opposite of the `plotShown` value we receive
+    const msgHandler = (plotShown) => {
+      this.setState({ showList: !plotShown })
+      // Remove the `msgHandler` event handler function (which is the parent function of this block) as a subscriber from the 'moviePlotToggled' event
+      this.removeEventListener('moviePlotToggled', msgHandler)
+    }
+    // Trigger the event handler when the `moviePlotToggled` event is triggered
+    this.addEventListener('moviePlotToggled', msgHandler)
+    this.fetch();
   }
 
 
@@ -87,11 +96,11 @@ class MovieList extends Component {
       or to put client-side code inside the componentDidMount React lifecycle method. 
       This method will get triggered once your component gets mounted on the page client-side, but does not get executed server-side.
     */
-   if (typeof window === 'undefined') {
-     return (
-       <div>Only available for client-side rendering</div>
-     )
-   }
+    //  if (typeof window === 'undefined') {
+    //    return (
+    //      <div>Only available for client-side rendering</div>
+    //    )
+    //  }
 
     const { hideOnMobile } = this.props.displayProperties || {}
     // Before anything else, if hideOnMobile is true, we return null so nothing else gets rendered
@@ -101,8 +110,9 @@ class MovieList extends Component {
       )
     }
 
-    
-    return (
+    const { showList } = this.state
+    // Use the `showList` state to determine whether to show the movie list or not
+    return showList ? (
       <Fragment>
         <h2>Movies</h2>
         <div>
@@ -116,7 +126,7 @@ class MovieList extends Component {
           <button onClick={ this.fetch }>More</button>
         </div>
       </Fragment>
-    )
+    ) : (<div>List Hiden</div>)
   }
 }
 
