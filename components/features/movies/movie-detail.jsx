@@ -6,6 +6,7 @@
 // Please set up resolver first - https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/using-consumer-function.md#setting-up-a-resolver
 
 // importing the Consumer object from fusion:consumer at the top of the file
+import PropTypes from 'prop-types'
 import Consumer from 'fusion:consumer'
 import React, { Component } from 'react'
 
@@ -56,6 +57,8 @@ class MovieDetail extends Component {
         {/* we can use our boolean value `showExtendedInfo` to determine if certain data gets displayed or not */}
         {Director && <p><strong>Director:</strong> {Director}</p>}
         {Actors && <p><strong>Actors:</strong> {Actors}</p>}
+        {Poster && Title && <img src={Poster} alt={`Poster for ${Title}`} />}
+        {Plot && <p><strong>Plot:</strong> {isPlotShown && Plot} {plotButton}</p>}
         {showExtendedInfo &&
           <Fragment>
             {Rated && <p><strong>Rated:</strong> {Rated}</p>}
