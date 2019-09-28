@@ -1,5 +1,7 @@
 /*  /components/features/movies/movie-list.jsx  */
 
+// We have to import the `PropTypes` module so we can use it later
+import PropTypes from 'prop-types'
 import Consumer from 'fusion:consumer'
 import React, { Fragment, Component } from 'react'
 
@@ -18,6 +20,9 @@ class MovieList extends Component {
   }
 
   fetch () {
+    // We're destructuring the `contentService` and `contentConfigValues` keys out of the `movieListConfig` prop inside `this.props.customFields`...
+    // contentService that we extracted from this.props.customFields.movieListConfig.
+    const { contentService, contentConfigValues } = this.props.customFields.movieListConfig;
     const { page } = this.state;
 
     // Increment the page at each call
@@ -26,22 +31,19 @@ class MovieList extends Component {
     // Utilizing Fusion's fetchContent method to fetch some content and then set some state. 
     // The function takes in one object variable key we call contentConfigMap, 
     // with the key that you would like to use to retrieve in the state.
+    // ...then we can use these values to replace our hardcoded content source name with `contentService` and our query object with `contentConfigValues` (merged with the `page` param)
     this.fetchContent({
         movies: {
           // The name of the content source
-          source: 'movie-search', 
+          source: contentService,
           // Object that contains the values we actually want to query on - 
-          // in this case, a movieQuery param searching for movies with the word 'Jurassic' in them 
-          // this object will be the only argument passed to the resolve method in our content source
-          query: { 
-            movieQuery: 'Jurassic',
-            page: page + 1
-          }, 
+          // merges the contentConfigValues object with the page param
+          query: Object.assign(contentConfigValues, { page: page + 1}),
           // A string containing a GraphQL query object, 
           // which will filter the results of our JSON down to just the data we need for this component 
           filter: '{ totalResults Search { Title Year Poster } }',
           // destructure the result of the query to cleanly insert them into the state.
-          transform (data) {
+          transform: (data) => {
             // Check if data is being returned
             if(data && data.Search) {
               // Add the results to the paginated list of movies
@@ -80,6 +82,13 @@ class MovieList extends Component {
       </Fragment>
     )
   }
+}
+
+MovieList.propTypes = {
+  customFields: PropTypes.shape({
+    // We're using the Fusion-specific PropType `contentConfig` and passing it the name(s) of the GraphQL schemas this component will work with
+    movieListConfig: PropTypes.contentConfig('movies')
+  })
 }
 
 export default MovieList
