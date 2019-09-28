@@ -31,6 +31,9 @@ class MovieDetail extends Component {
     {/* Here, we extract the data we want from `this.props.globalContent`, which we "short circuit" default to an empty object, just in case it doesn't exist */}
     const { Actors, Director, Plot, Poster, Rated, Title, Writer, Year } = this.props.globalContent || {}
 
+    // We can extract our custom field values here, and even set default values if desired...
+    const { moviePrefix = 'Movie', showExtendedInfo = false } = this.props.customFields
+
     const plotButton = (
       <button onClick={this.togglePlot}>
         {isPlotShown ? 'Hide Plot' : 'Show Plot'}
@@ -47,14 +50,19 @@ class MovieDetail extends Component {
     {/* Replace the static values with their dynamic equivalents, first checking if each necessary value exists */}
     return (
       <div className='movie-detail col-sm-12 col-md-8'>
-        {Title && <h1>{Title}</h1>}
+        {/* We use the `moviePrefix` value before the Title */}
+        {/* Invoking the `editableField` method with `moviePrefix` as the custom field it is tied to */}
+        <h1><span {...this.props.editableField('moviePrefix')}>{moviePrefix}:</span> {Title}</h1>
+        {/* we can use our boolean value `showExtendedInfo` to determine if certain data gets displayed or not */}
         {Director && <p><strong>Director:</strong> {Director}</p>}
         {Actors && <p><strong>Actors:</strong> {Actors}</p>}
-        {Plot && <p><strong>Plot:</strong> {isPlotShown && Plot} {plotButton}</p>}
-        {Rated && <p><strong>Rated:</strong> {Rated}</p>}
-        {Writer && <p><strong>Writer:</strong> {Writer}</p>}
-        {Year && <p><strong>Year:</strong> {Year}</p>}
-        {Poster && Title && <img src={Poster} alt={`Poster for ${Title}`} />}
+        {showExtendedInfo &&
+          <Fragment>
+            {Rated && <p><strong>Rated:</strong> {Rated}</p>}
+            {Writer && <p><strong>Writer:</strong> {Writer}</p>}
+            {Year && <p><strong>Year:</strong> {Year}</p>}
+          </Fragment>
+        }
       </div>
     )
   }
@@ -70,5 +78,17 @@ MovieDetail.label = 'Movie Detail'
 
 // mark a Feature to be rendered on the server only
 // MovieDetail.static = True
+
+MovieDetail.propTypes = {
+  customFields: PropTypes.shape({
+    /*
+      defined a required moviePrefix custom field that should contain some text to prefix our movie title, 
+      an optional showExtendedInfo field that is a boolean determining whether to show certain data in this view.
+    */
+    moviePrefix: PropTypes.string.isRequired,
+    showExtendedInfo: PropTypes.bool
+  })
+}
+
 
 export default MovieDetail
