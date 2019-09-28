@@ -29,6 +29,9 @@ export default (props) => {
         */}
         <link rel='icon' type='image/x-icon' href={props.deployment(`${props.contextPath}/resources/img/favicon.ico`)} />
         <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' />
+
+        {/*  Adding a link to our new CSS file  */}
+        <link rel='stylesheet' href={`${props.contextPath}/resources/css/main.css`} />
       </head>
       <body>
         <h1>Welcome to Fusion!</h1>

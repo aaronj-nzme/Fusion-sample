@@ -1,4 +1,10 @@
-/*  /components/features/movies/movie-list.jsx  */
+/*  /components/features/movies/movie-list/default.jsx  */
+
+// import the style here...
+// Our style should now be applied, just as it was in the first example - except in this case,
+// this CSS won't be included on any page that doesn't contain this Feature
+//  reducing our payload size and keeping our code modular.
+import './style.scss'
 
 // We have to import the `PropTypes` module so we can use it later
 import PropTypes from 'prop-types'
@@ -74,7 +80,7 @@ class MovieList extends Component {
             <div key={`movie-${idx}`}>
               <h4>{movie.Title}</h4>
               <p><strong>Year:</strong> {movie.Year}</p>
-              <img src={movie.Poster} />
+              <img src={movie.Poster}  className='image-sm' />
             </div>
           )}
           <button onClick={ this.fetch }>More</button>
