@@ -11,6 +11,9 @@ import PropTypes from 'prop-types'
 import Consumer from 'fusion:consumer'
 import React, { Fragment, Component } from 'react'
 
+// We import our shuffle method here...
+import shuffle from 'lodash'
+
 @Consumer
 class MovieList extends Component {
   constructor (props) {
@@ -59,7 +62,8 @@ class MovieList extends Component {
             // Check if data is being returned
             if(data && data.Search) {
               // Add the results to the paginated list of movies
-              this.state.movies.pages[page] = data.Search
+              // ...then we can use it here to shuffle new movies fetched from our content source!
+              this.state.movies.pages[page] = shuffle(data.Search);
               return this.state.movies
             }
 
