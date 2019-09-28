@@ -71,6 +71,15 @@ class MovieList extends Component {
     // a multiple clicks on the 'More' button wouldn't cause issues with incomplete and out-of-order fetches from
     // network issues
     const movies = [].concat(...this.state.movies.pages).filter(movie => movie);
+
+    const { hideOnMobile } = this.props.displayProperties || {}
+    // Before anything else, if hideOnMobile is true, we return null so nothing else gets rendered
+    if (hideOnMobile) {
+      return (
+        <div>You are on the mobile site</div>
+      )
+    }
+
     
     return (
       <Fragment>
