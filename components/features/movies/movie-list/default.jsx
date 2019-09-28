@@ -25,6 +25,12 @@ class MovieList extends Component {
     this.fetch();
   }
 
+  componentDidMount() {
+    // We moved our `this.fetch()` call to `componentDidMount` from `constructor`
+    this.fetch()
+  }
+
+
   fetch () {
     // We're destructuring the `contentService` and `contentConfigValues` keys out of the `movieListConfig` prop inside `this.props.customFields`...
     // contentService that we extracted from this.props.customFields.movieListConfig.
@@ -71,6 +77,17 @@ class MovieList extends Component {
     // a multiple clicks on the 'More' button wouldn't cause issues with incomplete and out-of-order fetches from
     // network issues
     const movies = [].concat(...this.state.movies.pages).filter(movie => movie);
+
+    /*
+      In Fusion, there are two ways to ensure that code only gets run on the client side: use a conditional to check for the window object
+      or to put client-side code inside the componentDidMount React lifecycle method. 
+      This method will get triggered once your component gets mounted on the page client-side, but does not get executed server-side.
+    */
+   if (typeof window === 'undefined') {
+     return (
+       <div>Only available for client-side rendering</div>
+     )
+   }
 
     const { hideOnMobile } = this.props.displayProperties || {}
     // Before anything else, if hideOnMobile is true, we return null so nothing else gets rendered
