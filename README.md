@@ -1,9 +1,32 @@
-# Fusion-sample
-Sample Fusion Pagebuilder
+# Fusion-sample 🎉🎉🎉
 
+### Get start
+```
+git clone https://github.com/Nealyang/React-Express-Blog-Demo.git # clone repo
+npm install # install dependencies
+fusion start / fusion daemon 👍👍👍 #run fusion
+```
+## Tutorial ⚡️
 
+2. [Cearting a Feature Component](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/creating-feature-component.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/2-creating-feature-component)
+3. [Creating a Layout Component](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/creating-layout-component.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/3-creating-layout-component)
+4. [Creating a Chain Component](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/creating-chain-component.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/4-creating-chain-component)
+5. [Event Handling and Interaction](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/event-handling-interaction.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/5-event-handling-and-interaction)
+6. [Defining a Content Source](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/defining-content-source.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/6-defining-content-source)
+7. [Using Environment Variables and "Secrets"](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/using-environment-secrets.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/7-using-environment-variables)
+8. [Using the Consumer Higher-Order Function](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/using-consumer-function.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/8-using-consumer-hoc-function)
+9. [Using a GraphQL Schema](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/using-graphql-schema.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/9-using-GraphQL-shcema)
+10. [Fetching Content](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/fetching-content.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/10-fetching-content)
+11. [Dynamically Configuring Content](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/dynamically-configuring-content.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/11-dynamically-configuring-content)
+12. [Using Site Properties](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/using-site-properties.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/12-using-site-properties)
+13. [Adding Styling to Components](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/adding-styling.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/13-adding-styling-to-component)
+14. [Adding Custom Fields to Components](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/adding-custom-fields.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/14-adding-custom-fields)
+15. [Working with Display Properties](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/working-with-display-properties.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/15-woring-with-display-properties)
+16. [Isomorphic vs. Server vs. SPA rendering](https://github.com/aaronj-nzme/Fusion-sample/tree/16-isomorphic-vs-server-spa) 👉🏻 [Repo Tag](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/isomorphic-server-spa-rendering.md)
+17. [Using Third-Party Libraries](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/using-third-party-libraries.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/17-using-third-party-libraries)
+18. [Messaging Between Components](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/messaging-between-components.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/18-messaging-between-components)
 
-## Helpful Commands
+## Helpful Commands 🍻
 
 ### Starting and stopping Docker
 ```python
