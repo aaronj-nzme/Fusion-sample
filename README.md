@@ -1,6 +1,6 @@
 # Fusion-sample 🎉🎉🎉
 
-### Get start
+## Get start🥰🥰🥰
 ```
 git clone https://github.com/Nealyang/React-Express-Blog-Demo.git # clone repo
 npm install # install dependencies
