@@ -6,7 +6,7 @@ git clone https://github.com/Nealyang/React-Express-Blog-Demo.git # clone repo
 npm install # install dependencies
 fusion start / fusion daemon 👍👍👍 #run fusion
 ```
-## Tutorial ⚡️
+## Tutorial ⚡️️️️️⚡️️️️️⚡️️️️️
 
 2. [Cearting a Feature Component](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/creating-feature-component.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/2-creating-feature-component)
 3. [Creating a Layout Component](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/creating-layout-component.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/3-creating-layout-component)
@@ -26,7 +26,7 @@ fusion start / fusion daemon 👍👍👍 #run fusion
 17. [Using Third-Party Libraries](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/using-third-party-libraries.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/17-using-third-party-libraries)
 18. [Messaging Between Components](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/messaging-between-components.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/18-messaging-between-components)
 
-## Helpful Commands 🍻
+## Helpful Commands 🍻🍻🍻
 
 ### Starting and stopping Docker
 ```python
