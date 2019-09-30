@@ -8,7 +8,7 @@ fusion start / fusion daemon 👍👍👍 #run fusion
 ```
 ## Tutorial ⚡️️️️️⚡️️️️️⚡️️️️️
 
-2. [Cearting a Feature Component](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/creating-feature-component.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/2-creating-feature-component)
+2. [Creating a Feature Component](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/creating-feature-component.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/2-creating-feature-component)
 3. [Creating a Layout Component](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/creating-layout-component.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/3-creating-layout-component)
 4. [Creating a Chain Component](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/creating-chain-component.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/4-creating-chain-component)
 5. [Event Handling and Interaction](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/event-handling-interaction.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/5-event-handling-and-interaction)
