@@ -22,7 +22,7 @@ fusion start / fusion daemon 👍👍👍 #run fusion
 13. [Adding Styling to Components](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/adding-styling.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/13-adding-styling-to-component)
 14. [Adding Custom Fields to Components](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/adding-custom-fields.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/14-adding-custom-fields)
 15. [Working with Display Properties](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/working-with-display-properties.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/15-woring-with-display-properties)
-16. [Isomorphic vs. Server vs. SPA rendering](https://github.com/aaronj-nzme/Fusion-sample/tree/16-isomorphic-vs-server-spa) 👉🏻 [Repo Tag](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/isomorphic-server-spa-rendering.md)
+16. [Isomorphic vs. Server vs. SPA rendering](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/isomorphic-server-spa-rendering.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/16-isomorphic-vs-server-spa)
 17. [Using Third-Party Libraries](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/using-third-party-libraries.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/17-using-third-party-libraries)
 18. [Messaging Between Components](https://nzme.arcpublishing.com/alc/fusion/documentation/recipes/messaging-between-components.md) 👉🏻 [Repo Tag](https://github.com/aaronj-nzme/Fusion-sample/tree/18-messaging-between-components)
 
